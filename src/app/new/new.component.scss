@@ -1,0 +1,92 @@
+ .container {
+    box-shadow: 10px 10px 30px #626262;
+    margin: 30px auto;;
+    padding: 0;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    .wrap { 
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        padding: 1px 20px;
+        h1 {
+            margin: 30px 0;
+            text-align: center;
+            font-weight: 600;
+            color: #fff; 
+          }
+    }
+
+    .img-wrap {
+        margin: 30px auto;
+    }
+
+    .description {
+        margin: 0 auto;
+        h4 {
+            text-align: justify;
+        }
+    }
+
+    .comments {
+        h2 {
+            margin: 20px 0 20px 2%;
+        }
+        .comments-body{
+            .comment{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                background: #2196F3;
+                margin: 10px auto;
+                border-radius: 20px;
+                color: #fff;
+                padding: 20px;
+                .wrap1 {
+                    position: relative;
+                    padding-bottom: 4%; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+                    padding-top: 30px;
+                    height: 0;
+                    overflow: hidden;
+                    background: red;          
+                  .logo {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                  }
+                } 
+                .wrap2{
+                }
+            }
+            .addComment {
+                h3 {
+                    margin: 20px 0 20px 2%;
+                }
+                .wrap{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    label{
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+ }
+
+ @media only screen and (max-width: 768px) {
+    .addComment {
+        
+        .wrap{
+            
+            flex-direction: column !important;
+            justify-content: center !important;
+            
+        }
+    }
+  }

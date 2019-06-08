@@ -1,0 +1,215 @@
+<div class="container">
+  <h1>Редагування фільмів:</h1>
+  <ngb-accordion #acc="ngbAccordion" > 
+    <div class="card" *ngFor="let film of films | paginate: { itemsPerPage: 5, currentPage: p1, id: 'first' }; let index = index">    
+      <button class="btn btn-link">khg nbmvnc</button>
+      <ngb-panel title="{{ film.name }}" > 
+          <ng-template ngbPanelTitle >
+            <span ngbPanelTitle (click)="deleteFilm(film.id)"><i class="fas fa-trash-alt filmDelete" ></i></span>
+          </ng-template>       
+        <ng-template ngbPanelContent>
+            
+          <form name="formFilms" action="" class="form col-12">
+            <label>Назва фільму:
+              <input  type="text" name="name" #filmName class="form-control" value="{{ film.name }}">
+            </label>
+            
+            <label>Обкладинка фільму:
+              <input  type="text" name="poster" #filmPoster class="form-control" value="{{ film.poster }}">
+            </label>
+                
+            <label>Рік виходу фільму:
+              <input  type="text" name="date" #filmDate class="form-control" value="{{ film.date }}">
+            </label>
+              
+            <label>Рейтинг фільму:
+              <input  type="text" name="rating" #filmRating class="form-control" value="{{ film.rating }}">
+            </label>
+            
+            <label>Країна походження фільму:
+              <input  type="text" name="locate" #filmLocate class="form-control" value="{{ film.locate }}">
+            </label>
+
+            <label>Посиляння на фільм:
+              <input  type="text" name="url" #filmUrl class="form-control" value="{{ film.url }}">
+            </label>
+            
+            <label>Перелік акторів:
+              <input  type="text" name="actors" #filmActors class="form-control" value="{{ film.actors }}">
+            </label>
+                  
+            <label>Головний режисер:
+              <input  type="text" name="director" #filmDirector class="form-control" value="{{ film.director }}">
+            </label> 
+            
+            <label>Категорії фільму:
+              <input  type="text" name="category" #filmCategory class="form-control" value="{{ film.category }}">
+            </label>
+
+            <label>Кількість переглядів:
+              <input  type="text" name="views" #filmViews class="form-control" value="{{ film.views }}">
+            </label>
+                
+            <label  *ngIf="film.comment != ''">Коментарі до фільму:
+              <input  type="text" name="comment" #filmComment class="form-control" value="{{ film.comment }}">
+            </label>
+
+            <label>Опис фільму:
+              <textarea  name="text" name="description" #filmDescription class="md-textarea form-control" id="" cols="30" rows="20" value="{{ film.description }}" ></textarea>   
+            </label> 
+
+            <button class="btn btn-primary col-4 col-md-3 center" style="display:block; margin: 0 auto" (click)="changeFilms(film.id, filmName.value, filmPoster.value, filmDate.value, filmRating.value, filmLocate.value, filmUrl.value, filmActors.value, filmDirector.value, filmCategory.value, filmViews.value, filmDescription.value)" >Зберегти</button>        
+          </form>
+        </ng-template> 
+      </ngb-panel>
+    </div>
+  </ngb-accordion>
+  <pagination-controls (pageChange)="p1 = $event" style="text-align: center; margin: 20px" id="first"></pagination-controls>
+
+
+
+  <div class="edit"> 
+    <ngb-accordion #acc="ngbAccordion">     
+      <ngb-panel  title="Додати фільм" >      
+        <ng-template ngbPanelContent>  
+          <form name="addFilm" action="" class="form col-12">
+            <label>Назва фільму:
+              <input  type="text" name="name" #filmName class="form-control" value="" [(ngModel)]="clearName">
+            </label>
+            
+            <label>Обкладинка фільму:
+              <input  type="text" name="poster" #filmPoster class="form-control" value=""  [(ngModel)]="clearPoster">
+            </label>
+                
+            <label>Рік виходу фільму:
+              <input  type="text" name="date" #filmDate class="form-control" value="" [(ngModel)]="clearDate">
+            </label>
+              
+            <label>Рейтинг фільму:
+              <input  type="text" name="rating" #filmRating class="form-control" value="" [(ngModel)]="clearRating">
+            </label>
+            
+            <label>Країна походження фільму:
+              <input  type="text" name="locate" #filmLocate class="form-control" value="" [(ngModel)]="clearLocate">
+            </label>
+
+            <label>Посиляння на фільм:
+              <input  type="text" name="url" #filmUrl class="form-control" value="" [(ngModel)]="clearUrl">
+            </label>
+            
+            <label>Перелік акторів:
+              <input  type="text" name="actors" #filmActors class="form-control" value="" [(ngModel)]="clearActors">
+            </label>
+                  
+            <label>Головний режисер:
+              <input  type="text" name="director" #filmDirector class="form-control" value="" [(ngModel)]="clearDirector">
+            </label> 
+            
+            <label>Категорії фільму:
+              <input  type="text" name="category" #filmCategory class="form-control" value="" [(ngModel)]="clearCategory">
+            </label>
+
+            <label>Кількість переглядів:
+              <input  type="text" name="views" #filmViews class="form-control" value="" [(ngModel)]="clearViews">
+            </label>
+                
+
+            <label>Опис фільму:
+              <textarea  name="text" name="description" #filmDescription class="md-textarea form-control" id="" cols="30" rows="20" value="" [(ngModel)]="clearDescription"></textarea>   
+            </label> 
+
+            <button class="btn btn-primary col-4 col-md-3 center" style="display:block; margin: 0 auto" (click)="addNewFilms(filmName.value, filmPoster.value, filmDate.value, filmRating.value, filmLocate.value, filmUrl.value, filmActors.value, filmDirector.value, filmCategory.value, filmViews.value, filmDescription.value)" >Зберегти</button>        
+          </form>
+        </ng-template> 
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1>Редагування новин:</h1>
+  <ngb-accordion #acc="ngbAccordion" >     
+    <ngb-panel  *ngFor="let newss of news | paginate: { itemsPerPage: 5, currentPage: p2, id: 'second' }; let index = index"  title="{{ newss.title }}" >  
+      <ng-template ngbPanelTitle >
+        <span ngbPanelTitle (click)="deleteNews(newss.id)"><i class="fas fa-trash-alt newsDelete" ></i></span>
+      </ng-template>    
+      <ng-template ngbPanelContent>  
+        <form name="formNews" action="" class="form col-12">
+          <label>Назва новини:
+            <input  type="text" name="title" #newssTitle class="form-control" value="{{ newss.title }}">
+          </label>
+          
+          <label>Обкладинка новини:
+            <input  type="text" name="poster" #newssPoster class="form-control" value="{{ newss.poster }}">
+          </label>
+               
+          <label  *ngIf="newss.comment != '' ">Коментарі до новини:
+            <input  type="text" name="comment" #newssComment class="form-control" value="{{ newss.comment }}">
+          </label>
+
+          <label>Опис:
+            <textarea  name="text" name="description" #newssText class="md-textarea form-control" id="" cols="30" rows="20" value="{{ newss.text }}" ></textarea>   
+          </label> 
+
+          <button class="btn btn-primary col-4 col-md-3 center" style="display:block; margin: 0 auto" (click)="changeNews(newss.id, newssTitle.value, newssPoster.value, newssText.value)" >Зберегти</button>        
+        </form>
+      </ng-template> 
+    </ngb-panel>
+  </ngb-accordion>
+  <pagination-controls  (pageChange)="p2 = $event" style="text-align: center; margin: 20px" id="second"></pagination-controls>
+
+
+
+
+
+  <div class="edit">
+    <ngb-accordion #acc="ngbAccordion" class="edit" >     
+      <ngb-panel  title="Додати новину" >      
+        <ng-template ngbPanelContent>  
+          <form name="addNews" action="" class="form col-12">
+            <label>Назва новини:
+              <input  type="text" name="title" #newsTitle class="form-control" value="" [(ngModel)]="clearTitle">
+            </label>
+            
+            <label>Обкладинка новини:
+              <input  type="text" name="poster" #newsPoster class="form-control" value="" [(ngModel)]="clearNPoster">
+            </label>
+                
+            <label>Опис:
+              <textarea  name="text" name="text" #newsText class="md-textarea form-control" id="" cols="30" rows="20" value="" [(ngModel)]="clearText"></textarea>   
+            </label> 
+
+            <button class="btn btn-primary col-4 col-md-3 center" style="display:block; margin: 0 auto" (click)="addNewNews(newsTitle.value, newsPoster.value, newsText.value)" >Зберегти</button>        
+          </form>
+        </ng-template> 
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+

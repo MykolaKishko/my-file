@@ -1,0 +1,44 @@
+
+  
+<div class="container" id="content">
+  <div class="wrap  bg-primary">
+    <h1>{{ selectedNewss.title | uppercase }}</h1> 
+  </div>
+  
+  <div class="img-wrap  col-lg-6 col-md-8 col-sm-12 col-12">
+    <img class="col-12" src="{{ selectedNewss.poster }}" alt="{{ selectedNewss.name }}">
+  </div>
+  
+      
+  <div class="description col-10">
+    <h4 class="col-12">{{ selectedNewss.text }}</h4>
+  </div>
+  
+
+  <div class="comments col-lg-12">
+    <h2 *ngIf="selectedNewss.comment != '' ">Відгуки:</h2>
+    <div class="comments-body">
+      <div class="comment col-10"  
+      *ngFor="let c of selectedNewss.comment; let odd = odd; let even = even"
+      [ngClass]="{ odd: odd, even: even }">
+        <div class="wrap1 col-1">
+          <div class="logo"></div>
+        </div>
+        <div class="wrap2 col-10">
+          <h3 class="text">{{ c }}</h3>
+        </div>
+      </div>
+
+      <div class="addComment">
+          <h3>Написати відгук:</h3>
+          <div class="wrap">
+            <label class="col-md-2" for="text">Ваш відгук:</label>
+            <input class="form-control col-md-7" id="text" type="text" #commentText [(ngModel)]="clearValue" placeholder="Бла-бла-бла...">
+            <button class="btn btn-primary col-md-2" (click)="add(commentText.value)">Зберегти</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+  

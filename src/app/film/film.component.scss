@@ -1,0 +1,157 @@
+  .container {
+    box-shadow: 10px 10px 30px #626262;
+    margin: 30px auto;;
+    padding: 0;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    .wrap { 
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      padding: 1px 0;
+      margin-bottom: 30px;
+      h1 {
+        margin: 30px 0;
+        text-align: center;
+        font-weight: 600;
+        color: #fff; 
+      }
+    }
+    .row {
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      align-items: center;
+      .img-wrap {
+        position: relative;
+        padding-bottom: 50%; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+      }
+      .img-wrap img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .info {
+        .wrap1 { 
+          h5 {
+            font-weight: 400;
+            margin-top: 10px;
+          }
+        }
+        .wrap2 { 
+          h5 {
+            font-weight: 900;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+    .description {
+      margin: 30px 0;
+      display: flex;
+      justify-content: center;
+      h4 {
+        text-align: justify;
+      }
+    }
+
+    h3{
+      text-align: center;
+      margin: 20px 0 0 0;
+    }
+    video {
+      margin: 30px auto;
+    }
+
+    .comments {
+      h2 {
+          margin: 20px 0 20px 2%;
+      }
+      .comments-body{
+          .comment{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+              align-items: center;
+              background: #2196F3;
+              margin: 10px auto;
+              border-radius: 20px;
+              color: #fff;
+              padding: 20px;
+              .wrap1 {
+                  position: relative;
+                  padding-bottom: 4%; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+                  padding-top: 30px;
+                  height: 0;
+                  overflow: hidden;
+                  background: red;          
+                .logo {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                }
+              } 
+              .wrap2{
+              }
+          }
+          .addComment {
+              h3 {
+                  margin: 20px 0 20px 2%;
+              }
+              .wrap{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  align-items: center;
+                  label{
+                      text-align: center;
+                      cursor: pointer;
+                  }
+              }
+          }
+      }
+  }
+  }
+
+  
+
+  @media only screen and (max-width: 992px) {
+    .img-wrap {
+      padding-bottom: 60% !important; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+    }
+    
+}
+
+@media only screen and (max-width: 768px) {
+  
+  .img-wrap {
+    padding-bottom: 120% !important ; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+  }
+  .info {
+    margin: 30px 0 0 0;
+  }
+  .addComment {
+    .wrap{
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 635px) {
+  .img-wrap {
+    padding-bottom: 120% !important ; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+  }
+  .container {
+    box-shadow: none;
+  }
+}
+
+

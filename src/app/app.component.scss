@@ -1,0 +1,22 @@
+.header {   
+    .navbar-brand {
+        font-size: 30px;
+        font-weight: 600;
+        font-family: monospace;
+    }
+    .collapse {
+        margin-left: 65%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .collapse {
+        margin-left: 58% !important;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .collapse {
+        margin-left: 0% !important;
+    }
+}

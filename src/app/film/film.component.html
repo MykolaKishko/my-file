@@ -1,0 +1,77 @@
+
+  
+<div class="container" id="content">
+  <div class="wrap  bg-primary">
+    <h1>{{ selectedFilm.name }}</h1> 
+  </div>
+  <div class="row">
+    <div class="img-wrap  col-lg-4 col-md-5 col-sm-10 col-10">
+      <img src="{{ selectedFilm.poster }}" alt="{{ selectedFilm.name }}">
+    </div>
+    <div class="info row  col-lg-6 col-md-6">
+      <table class="table">
+        <tr>
+          <td>Назва:</td>
+          <td>{{ selectedFilm.name }}</td>
+        </tr>
+        <tr>
+          <td>Рік виходу:</td>
+          <td>{{ selectedFilm.date }}</td>
+        </tr>
+        <tr>
+          <td>Країна:</td>
+          <td>{{ selectedFilm.locate }}</td>
+        </tr>
+        <tr>
+          <td>Рейтинг IMDB:</td>
+          <td>{{ selectedFilm.rating }}</td>
+        </tr>
+        <tr>
+          <td>Жанр:</td>
+          <td>{{ selectedFilm.category }}</td>
+        </tr><tr>
+          <td>Режисер:</td>
+          <td>{{ selectedFilm.director }}</td>
+          </tr>
+        <tr>
+          <td>Актори:</td>
+          <td>{{ selectedFilm.actors }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="description">
+    <h4 class="col-md-10">{{ selectedFilm.description }}</h4>
+  </div>
+  <h3>Переглянути фільм:</h3>
+  <video controls class=" col-10 col-md-10 embed-responsive embed-responsive-16by9">
+    <source class="embed-responsive-item" src="{{ selectedFilm.url }}" type="video/mp4">
+  </video>   
+
+  <div class="comments col-lg-12">
+    <h2 *ngIf="selectedFilm.comment != '' ">Відгуки:</h2>
+    <div class="comments-body">
+      <div class="comment col-10"  
+      *ngFor="let c of selectedFilm.comment; let odd = odd; let even = even"
+      [ngClass]="{ odd: odd, even: even }">
+        <div class="wrap1 col-1">
+          <div class="logo"></div>
+        </div>
+        <div class="wrap2 col-10">
+          <h3 class="text">{{ c }}</h3>
+        </div>
+      </div>
+
+      <div class="addComment">
+          <h3>Написати відгук:</h3>
+          <div class="wrap">
+            <label class="col-md-2" for="text">Ваш відгук:</label>
+            <input class="form-control col-md-7" id="text" type="text" #commentText [(ngModel)]="clearValue" placeholder="Бла-бла-бла...">
+            <button class="btn btn-primary col-md-2" (click)="add(commentText.value)">Зберегти</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+

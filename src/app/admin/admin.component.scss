@@ -1,0 +1,29 @@
+.container{
+    h1{
+        margin-bottom: 4%;
+    }
+    h1:first-child{
+        margin-top: 4%;
+    }
+}
+
+label {
+    display: block;
+}
+
+.filmDelete,
+.newsDelete {
+    color: red;
+    position: absolute;
+    right: 3%;
+    transition: .5s;
+}
+.filmDelete:hover,
+.newsDelete:hover {
+    opacity: .8;
+    text-shadow: 3px 3px 10px rgb(0, 0, 0);
+}
+
+.edit {
+    margin-bottom: 30px;
+}

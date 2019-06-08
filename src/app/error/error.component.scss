@@ -1,0 +1,24 @@
+.wrapper { 
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    .wrap {
+        height: 50%;
+        width: 40%;
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p {
+            color: #2196F3;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+            text-align: center;
+        }
+        .title {
+            font-size: 5em;
+        }
+    }
+}

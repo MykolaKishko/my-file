@@ -1,0 +1,68 @@
+<div class="container">
+  <h1>Переглянуті фільми:</h1>
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <div class="col-md-4"  *ngFor="let mFilm of myFilm | paginate: { itemsPerPage: 3, currentPage: p1, id: 'first'}">
+          <div class="card film mb-2" routerLink="/film/{{ mFilm.id }}">
+            <img class="card-img-top" src="{{ mFilm.poster }}" alt="{{ mFilm.poster }}">
+            <i class="fas fa-times-circle" (click)="mFilmDel(mFilm.id)"></i>
+            <h4 class="title">{{ mFilm.name }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pagination-controls  (pageChange)="p1 = $event"  maxSize = "4" style="text-align: center; margin: 20px" id="first"></pagination-controls>
+  </div>
+</div>
+<div class="container">
+  <h1>Фільми що сподобалися:</h1>
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <div class="col-md-4"  *ngFor="let lFilm of likeFilm | paginate: { itemsPerPage: 3, currentPage: p2,  id: 'second'}">
+          <div class="card film mb-2" routerLink="/film/{{ lFilm.id }}">
+            <img class="card-img-top" src="{{ lFilm.poster }}" alt="{{ lFilm.poster }}">
+            <i class="fas fa-times-circle"  (click)="lFilmDel(lFilm.id)"></i>
+            <h4 class="title">{{ lFilm.name }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pagination-controls  (pageChange)="p2 = $event"  maxSize = "4" style="text-align: center; margin: 20px" id="second"></pagination-controls>
+  </div>
+</div>  
+<div class="container">
+  <h1>Переглянуті новини:</h1>
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <div class="col-md-4"  *ngFor="let mNews of myNews | paginate: { itemsPerPage: 3, currentPage: p3, id: 'third'}">
+          <div class="card mb-2" routerLink="/new/{{ mNews.id }}">
+            <img class="card-img-top" src="{{ mNews.poster }}" alt="{{ mNews.poster }}">
+            <i class="fas fa-times-circle" (click)="mNewsDel(mNews.id)"></i>
+            <h4 class="title">{{ mNews.title }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pagination-controls (pageChange)="p3 = $event"  maxSize = "4" style="text-align: center; margin: 20px"  id="third"></pagination-controls>
+  </div>
+</div>
+<div class="container">
+  <h1>Новини що сподобалися:</h1>
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <div class="col-md-4"  *ngFor="let lNews of likeNews | paginate: { itemsPerPage: 3, currentPage: p4, id: 'fourth'}">
+          <div class="card mb-2" routerLink="/new/{{ lNews.id }}">
+            <img class="card-img-top" src="{{ lNews.poster }}" alt="{{ lNews.poster }}">
+            <i class="fas fa-times-circle" (click)="lNewsDel(lNews.id)"></i>
+            <h4 class="title">{{ lNews.title }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pagination-controls (pageChange)="p4 = $event" maxSize = "4" style="text-align: center; margin: 20px"  id="fourth"></pagination-controls>
+  </div>
+</div>
