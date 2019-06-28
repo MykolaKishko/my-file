@@ -1,20 +1,13 @@
-
-  
 <div class="container" id="content">
   <div class="wrap  bg-primary">
     <h1>{{ selectedNewss.title | uppercase }}</h1> 
   </div>
-  
   <div class="img-wrap  col-lg-6 col-md-8 col-sm-12 col-12">
     <img class="col-12" src="{{ selectedNewss.poster }}" alt="{{ selectedNewss.name }}">
-  </div>
-  
-      
+  </div>    
   <div class="description col-10">
     <h4 class="col-12">{{ selectedNewss.text }}</h4>
   </div>
-  
-
   <div class="comments col-lg-12">
     <h2 *ngIf="selectedNewss.comment != '' ">Відгуки:</h2>
     <div class="comments-body">
@@ -28,7 +21,6 @@
           <h3 class="text">{{ c }}</h3>
         </div>
       </div>
-
       <div class="addComment">
           <h3>Написати відгук:</h3>
           <div class="wrap">

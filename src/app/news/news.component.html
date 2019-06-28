@@ -14,12 +14,9 @@
             <i class="fas fa-heart"  id="like{{ newss.id }}" (click)="like(newss.id)" *ngIf="newss.like == false"></i>
             <i class="fas fa-heart red"  id="like{{ newss.id }}" (click)="likeSel(newss.id)" *ngIf="newss.like == true"></i>
           </div>
-          
-          
         </div>
       </div>
     </div>
-    
   </div>
   <pagination-controls (pageChange)="p = $event" style="text-align: center; margin: 20px"></pagination-controls>
 </div>

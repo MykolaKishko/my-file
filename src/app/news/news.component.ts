@@ -23,10 +23,11 @@ export class NewsComponent implements OnInit {
     elmnt.scrollIntoView();
   }
 
-
   newsSelect( id: number) {
     this.news.forEach((element, i) => {
-      if(element.id == id) {
+      if( element.view === true) { 
+        console.log('Вже є');
+     } else if(element.id == id) {
         element.view = true;
         this.myNews.push( element ); 
         console.log(element);
@@ -77,10 +78,4 @@ export class NewsComponent implements OnInit {
       }
     });
   }
-
-  
-
-
-
-
 }

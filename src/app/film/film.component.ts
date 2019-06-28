@@ -14,9 +14,7 @@ export class FilmComponent implements OnInit {
   selectedFilm:  Film;
   filterName : string = null;
   clearValue: string;
-  
-   
-
+ 
   constructor( private GlobalService: GlobalService, private route: ActivatedRoute ) { }
  
   ngOnInit() {
@@ -35,7 +33,5 @@ export class FilmComponent implements OnInit {
   getFilm(){
     const id = +this.route.snapshot.paramMap.get('id');
     this.selectedFilm = this.GlobalService.films.find(elem => elem.id === id);
-
   }
-
 }

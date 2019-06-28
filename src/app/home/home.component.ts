@@ -18,22 +18,19 @@ export class HomeComponent {
  
   constructor( private GlobalService: GlobalService ) { }
 
-  ngOnInit() {
-    
-  }
-  
+  ngOnInit() {}
 
-  filmSelect( id: number) {
+  filmSelect( id: any) {
     this.films.forEach((element, i) => {
-      if(element.id == id) {
-        element.view = true;
-        this.myFilm.push(element); 
-        console.log(element);
-      }
+      if( element.view === true ) { 
+        console.log('Вже є'); 
+      } else if( element.id == id ) {
+          element.view = true;
+          this.myFilm.push(element); 
+          console.log(element);
+        }
     });
   }
-
-
 
   view( id: number) {
     event.stopPropagation();
@@ -78,9 +75,4 @@ export class HomeComponent {
       }
     });
   } 
-
-  
-
-
-
 }

@@ -2,7 +2,6 @@
   <h1 class="soon-title">Скоро на екранах</h1>
     <div id="carouselExampleControls" class="carousel slide col-12 col-md-8" data-ride="carousel">
         <div class="carousel-inner">
-          
           <div class="carousel-item" *ngFor="let soonFilm of soonFilms; let first = first" [class.active]="first">
             <div class="wrap">
               <img src="{{ soonFilm.poster }}" class="d-block w-100" alt="...">
@@ -20,8 +19,6 @@
         </a>
       </div>
 </div>
-
-
 <div class="container">
     <div class="form-group search container">
         <label for="exampleInputEmail1" class="col-md-2">Пошук:</label>
@@ -31,9 +28,6 @@
         <h1>Всі фільми:</h1>
       </div>
   <div class="row justify-content-center">
-    
-  
-    
     <div class="wrap col-lg-10">
       <div class="row  justify-content-center" >   
         <div

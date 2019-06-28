@@ -34,12 +34,4 @@ export class NewComponent implements OnInit {
     this.selectedNewss = this.GlobalService.news.find(elem => elem.id === id);
 
   } 
-
-
-
-
-  
- 
-
- 
 } 

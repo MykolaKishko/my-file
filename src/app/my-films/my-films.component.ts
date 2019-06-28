@@ -19,10 +19,7 @@ export class MyFilmsComponent implements OnInit {
   likeNews = this.GlobalService.likeNews;
   constructor( private GlobalService: GlobalService ) { }
 
-  ngOnInit() {
-  }
- 
-  
+  ngOnInit() { }
 
   mFilmDel( id: number ) {
     this.myFilm.forEach((element, i) => {
@@ -67,9 +64,4 @@ export class MyFilmsComponent implements OnInit {
       }
     });
   }
-  
-
-
-
 }
- 
