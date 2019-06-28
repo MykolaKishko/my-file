@@ -45,8 +45,6 @@ export class AdminComponent implements OnInit {
     this.getFilm(); 
   }
 
-  
-
 // tslint:disable-next-line: max-line-length
   changeFilms(id: number, name: any, poster: any, date: any, rating: any, locate: any, url: any, actors: any, director: any, category: any, views: any, description: any) {
     console.log(name);
@@ -73,15 +71,12 @@ export class AdminComponent implements OnInit {
         element.poster = poster;
         element.text = text;
         console.log(this.news);
- 
       }
- 
     });
   }
 
 addNewFilms(name: string, poster: string, date: number, rating: number, locate: string, url: string, actors: string, director: string, category: string, views: number, description: string){
   let number: number = this.films.length+1;
-  
   let newName: string = name;
   let newPoster: string = poster;
   let newDate: number = date;
@@ -94,19 +89,17 @@ addNewFilms(name: string, poster: string, date: number, rating: number, locate: 
   let newViews: number = views;
   let newDescription: string = description;
 
-
-
-this.clearName = "";
-this.clearPoster = "";
-this.clearDate = null;
-this.clearDescription = "";
-this.clearRating = null;
-this.clearLocate = "";
-this.clearUrl = "";
-this.clearActors = "";
-this.clearDirector = "";
-this.clearCategory = "";
-this.clearViews = null;
+  this.clearName = "";
+  this.clearPoster = "";
+  this.clearDate = null;
+  this.clearDescription = "";
+  this.clearRating = null;
+  this.clearLocate = "";
+  this.clearUrl = "";
+  this.clearActors = "";
+  this.clearDirector = "";
+  this.clearCategory = "";
+  this.clearViews = null;
 
 // tslint:disable-next-line: prefer-const
   let newFilmsAdd = {
@@ -128,7 +121,6 @@ this.clearViews = null;
   }
   this.films.push(newFilmsAdd);
   console.log(this.films);
-
 }
   
 addNewNews(title: any, poster: any, text: any) {
@@ -153,13 +145,10 @@ addNewNews(title: any, poster: any, text: any) {
   this.news.push(newNews);
 }
  
- 
   getFilm(){
     const id = +this.route.snapshot.paramMap.get('id');
     this.selectedFilm = this.GlobalService.films.find(elem => elem.id === id);
-
   }
-
 
   deleteFilm(id: number) {
     event.stopPropagation;
@@ -178,18 +167,5 @@ addNewNews(title: any, poster: any, text: any) {
       }
     });
   }
-
-
-
-
-
-
-
-
-
-
-
-
 }  
-    
 
