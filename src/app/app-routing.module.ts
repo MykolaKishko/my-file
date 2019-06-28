@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'myFilms', component: MyFilmsComponent },
   { path: '**', component: ErrorComponent }
-
 ];
 
 @NgModule({
