@@ -16,12 +16,6 @@ export class Film {
     comment: string[];
 }
 
-
-export class Comments {
-    name: string;
-    text: string;
-}
-
 export class MyFilm { 
     name: string;
     poster: string;
